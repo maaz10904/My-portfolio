@@ -1,0 +1,12 @@
+{
+  "name": "maaz-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Maaz Ahmed Shaikh built with Express.js.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  }
+}
