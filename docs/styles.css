@@ -276,6 +276,223 @@ a:hover {
   color: var(--accent);
 }
 
+.project-card .button,
+.project-actions .button {
+  margin-bottom: 0;
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.project-detail-hero {
+  padding: 5rem 0 3rem;
+}
+
+.project-detail-hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.95;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.project-video-slot,
+.project-fact-panel,
+.detail-panel,
+.project-next {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.project-video-slot {
+  min-height: 320px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(135deg, rgba(132, 204, 22, 0.14), rgba(15, 23, 42, 0.84)),
+    repeating-linear-gradient(45deg, rgba(148, 163, 184, 0.08) 0 1px, transparent 1px 16px);
+}
+
+.project-video-slot.has-video {
+  padding: 0;
+  overflow: hidden;
+  background: #020617;
+}
+
+.project-video-slot video {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  display: block;
+  object-fit: contain;
+  background: #020617;
+}
+
+.project-fact-panel {
+  padding: 2rem;
+}
+
+.project-fact-panel dl {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.project-fact-panel div {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.project-fact-panel div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.project-fact-panel dt {
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.project-fact-panel dd {
+  margin: 0.35rem 0 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.project-video-slot h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.project-video-slot p:last-child,
+.detail-panel p,
+.detail-columns p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.detail-columns {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.detail-columns h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.detail-panel {
+  padding: 1.75rem;
+}
+
+.detail-panel h3 {
+  margin: 0 0 0.9rem;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pdf-embed {
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #020617;
+  box-shadow: var(--shadow);
+}
+
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pdf-toolbar p {
+  min-width: 5.5rem;
+  margin: 0;
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: 700;
+}
+
+.pdf-toolbar .button {
+  padding: 0.75rem 1rem;
+}
+
+.pdf-toolbar .button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pdf-canvas-wrap {
+  position: relative;
+  display: grid;
+  place-items: start center;
+  min-height: 520px;
+  max-height: min(78vh, 820px);
+  overflow: auto;
+  padding: 1rem;
+  background: #111827;
+}
+
+.pdf-canvas-wrap canvas {
+  max-width: 100%;
+  background: #ffffff;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.38);
+}
+
+.pdf-status {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  width: min(90%, 520px);
+  margin: 0;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.project-next {
+  padding: 2rem;
+}
+
+.project-next p {
+  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+}
+
+.project-next a {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+}
+
 .project-placeholder {
   margin-top: 1.5rem;
   color: var(--text-muted);
@@ -487,6 +704,9 @@ section.animate-section.visible {
   .hero-grid,
   .cards-grid,
   .contact-grid,
+  .project-detail-grid,
+  .detail-columns,
+  .feature-grid,
   .cert-gallery {
     grid-template-columns: 1fr;
   }
@@ -511,6 +731,15 @@ section.animate-section.visible {
   }
 
   .button {
+    width: 100%;
+  }
+
+  .pdf-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .pdf-toolbar p {
+    order: -1;
     width: 100%;
   }
 }
